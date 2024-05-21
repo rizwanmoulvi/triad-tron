@@ -128,29 +128,16 @@ class App extends React.Component {
             transparent way, offering lower fees and more control for everyone.
           </p>
           <Link
-            to="/advertiser"
-            style={{
-              backgroundColor: "#fdfdfd",
-              borderRadius: "25px",
-              color: "#000000",
-              padding: "25px",
-              marginRight: "25px",
-              fontSize: "30px",
-              fontWeight: "bolder",
-            }}
-          >
-            Advertiser Dashboard
-          </Link>
+  to="/advertiser"
+  className="bg-white text-danger rounded px-4 py-4 mx-2 text-decoration-none fw-bold"
+  style={{ fontSize: "30px" }}
+>
+  Advertiser Dashboard
+</Link>
           <Link
             to="/publisher"
-            style={{
-              backgroundColor: "#fdfdfd",
-              borderRadius: "25px",
-              color: "#000000",
-              padding: "25px",
-              fontSize: "30px",
-              fontWeight: "bolder",
-            }}
+            className="bg-white text-danger rounded px-4 py-4 mx-2 text-decoration-none fw-bold"
+  style={{ fontSize: "30px" }}
           >
             Publisher Dashboard
           </Link>

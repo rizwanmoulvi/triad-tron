@@ -6,35 +6,46 @@ import "./App.css";
 const Header = () => {
   return (
     <header className="newheader">
-      <div style={{ flex: "2", paddingLeft: "50px"}}>
-        <Link to="/" 
-            style={{ margin: "0 10px", fontSize: "30px", color: "white", fontWeight: "bolder"}}
-        >
-          TriAd
-        </Link>
+      <div style={{ flex: "2", paddingLeft: "50px" }}>
+      <Link
+  to="/"
+  style={{
+    margin: "0 10px",
+    fontSize: "35px",
+    color: "red",
+    fontWeight: "bolder",
+    textDecoration: "none"
+  }}
+>
+  TriAd
+</Link>
       </div>
       <nav style={{ flex: "10", textAlign: "right" }}>
         <Link
           to="/admin"
-          style={{ margin: "0 10px", fontSize: "30px", color: "white" }}
+          className="bg-white text-danger rounded px-3 py-2 mx-2 text-decoration-none fw-bold"
+          style={{ fontSize: "30px" }}
         >
           Admin
         </Link>
         <Link
           to="/advertisers"
-          style={{ margin: "0 10px", fontSize: "30px", color: "white" }}
+          className="bg-white text-danger rounded px-3 py-2 mx-2 text-decoration-none fw-bold"
+          style={{ fontSize: "30px" }}
         >
           Advertisers
         </Link>
         <Link
           to="/publisher"
-          style={{ margin: "0 10px", fontSize: "30px", color: "white" }}
+          className="bg-white text-danger rounded px-3 py-2 mx-2 text-decoration-none fw-bold"
+          style={{ fontSize: "30px" }}
         >
           Publisher
         </Link>
         <Link
           to="/site"
-          style={{ margin: "0 10px", fontSize: "30px", color: "white" }}
+          className="bg-white text-danger rounded px-3 py-2 mx-2 text-decoration-none fw-bold"
+          style={{ fontSize: "30px" }}
         >
           Site
         </Link>

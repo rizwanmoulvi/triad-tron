@@ -3,7 +3,6 @@ import TronLinkGuide from "./TronLinkGuide";
 import TronWeb from "tronweb";
 import Utils from "../utils";
 
-
 // import Content from './Content';
 
 import "./style.css";
@@ -218,46 +217,109 @@ class Admin extends React.Component {
             Admin Dashboard
           </h1>
           <br />
-            
-          <h4>Ads Count: {this.state.totalAds}</h4>
-          <h4>Contract Balance: {this.state.contractBalance} TRX</h4>
-          <br />
 
-          <h4>Set Rate Per Impression</h4>
-          <input
-            type="number"
-            name="ratePerImpression"
-            onChange={this.handleRateChange}
-            placeholder="Rate Per Impression"
-            required
-          />
-          <button onClick={this.handleButtonClick}>Set Rate</button><br />
-          <h4>Current Rate Per Impression: {this.state.ratePerImpression}</h4>
-          <br />
-  
-
-          <h4>Withdraw For Admin</h4>
-          <input
-            type="number"
-            name="amount"
-            onChange={this.handleAmountWithdraw}
-            placeholder="Amount"
-            required
-          />
-          <button onClick={this.handleWithdrawSurplus}>Withdraw Amount</button>
-          <br />
+          <div className="row" style={{ margin: "auto" }}>
+            <div className="col-md-4">
+              <div className="card text-center p-3 h-100">
+                <h4>Ads Count:</h4>
+                <h2 style={{ color: "red" }}>{this.state.totalAds}</h2>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card text-center p-3 h-100">
+                <h4>Contract Balance:</h4>
+                <h2 style={{ color: "red" }}>
+                  {this.state.contractBalance} TRX
+                </h2>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card text-center p-3 h-100">
+                <h4>Current Rate Per Impression:</h4>
+                <h2 style={{ color: "red" }}>
+                  {this.state.ratePerImpression} TRX
+                </h2>
+              </div>
+            </div>
+          </div>
           <br />
           <br />
 
-          <h4>Remove Expired Ads</h4>
-          <input
-            type="number"
-            name="adId"
-            onChange={this.handleRemoveAd}
-            placeholder="Ad Id"
-            required
-          />
-          <button onClick={this.handleRemoveAdButton}>Remove Ad</button>
+          <div
+            className="d-flex justify-content-center gap-3"
+            style={{ maxWidth: "800px", margin: "auto" }}
+          >
+            <h4 className="pt-2">Set Rate Per Impression:</h4>
+            <input
+              type="number"
+              name="ratePerImpression"
+              onChange={this.handleRateChange}
+              placeholder="Rate Per Impression"
+              required
+              className="form-control rounded p-2"
+              style={{ width: "auto" }}
+            />
+            <button
+              className="btn btn-outline-light rounded-5 px-3"
+              onClick={this.handleButtonClick}
+              style={{ whiteSpace: "nowrap" }}
+            >
+              Set Rate
+            </button>
+          </div>
+          <br />
+          <br />
+          <br />
+
+          <div
+            className="d-flex justify-content-center gap-3"
+            style={{ maxWidth: "800px", margin: "auto" }}
+          >
+            <h4 className="pt-2">Withdraw For Admin:</h4>
+            <input
+              type="number"
+              name="amount"
+              onChange={this.handleAmountWithdraw}
+              placeholder="Amount"
+              required
+              className="form-control rounded p-2"
+              style={{ width: "auto" }}
+            />
+            <button
+              className="btn btn-outline-light rounded-5 px-3"
+              onClick={this.handleWithdrawSurplus}
+              style={{ whiteSpace: "nowrap" }}
+            >
+              Withdraw Amount
+            </button>
+          </div>
+          <br />
+          <br />
+          <br />
+
+          <div
+            className="d-flex justify-content-center gap-3"
+            style={{ maxWidth: "800px", margin: "auto" }}
+          >
+            <h4 className="pt-2">Remove Expired Ads:</h4>
+            <input
+              type="number"
+              name="adId"
+              onChange={this.handleRemoveAd}
+              placeholder="Ad Id"
+              required
+              className="form-control rounded p-2"
+              style={{ width: "auto" }}
+            />
+            <button
+              className="btn btn-outline-light rounded-5 px-3"
+              onClick={this.handleRemoveAdButton}
+              style={{ whiteSpace: "nowrap" }}
+            >
+              Remove Ad
+            </button>
+          </div>
+
           <br />
           <br />
           <br />
@@ -274,7 +336,14 @@ class Admin extends React.Component {
               [...this.state.ads].reverse().map(
                 (ad, index) =>
                   ad.name && (
-                    <div key={index} style={{border: "2px solid #fdfdfd", borderRadius: "10px", padding: "10px"}}>
+                    <div
+                      key={index}
+                      style={{
+                        border: "2px solid #fdfdfd",
+                        borderRadius: "10px",
+                        padding: "10px",
+                      }}
+                    >
                       <a
                         href={
                           ad.linkToTarget.startsWith("http://") ||
@@ -296,7 +365,7 @@ class Admin extends React.Component {
                       <p>Target : {ad.linkToTarget}</p>
                       <p>Impression Count : {ad.impressionsCount}</p>
                       <p>Impression Target : {ad.impressionsCountLimit}</p>
-                      <p>Budeget : {ad.budget} TRX</p>
+                      <p>Budget : {ad.budget} TRX</p>
                     </div>
                   )
               )}
