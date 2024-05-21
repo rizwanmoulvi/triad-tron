@@ -3,6 +3,7 @@ import TronLinkGuide from "./TronLinkGuide";
 import TronWeb from "tronweb";
 import Utils from "../utils";
 
+
 // import Content from './Content';
 
 import "./style.css";
@@ -204,7 +205,7 @@ class Admin extends React.Component {
     if (!this.state.tronWeb.loggedIn) return <TronLinkGuide installed />;
 
     return (
-      <div className="row">
+      <div className="row ">
         <div className="col-lg-12 text-center">
           <h1
             style={{
@@ -217,7 +218,7 @@ class Admin extends React.Component {
             Admin Dashboard
           </h1>
           <br />
-
+            
           <h4>Ads Count: {this.state.totalAds}</h4>
           <h4>Contract Balance: {this.state.contractBalance} TRX</h4>
           <br />
@@ -230,10 +231,10 @@ class Admin extends React.Component {
             placeholder="Rate Per Impression"
             required
           />
-          <button onClick={this.handleButtonClick}>Set Rate</button><br /><br /><br />
+          <button onClick={this.handleButtonClick}>Set Rate</button><br />
           <h4>Current Rate Per Impression: {this.state.ratePerImpression}</h4>
           <br />
-          <br />
+  
 
           <h4>Withdraw For Admin</h4>
           <input
