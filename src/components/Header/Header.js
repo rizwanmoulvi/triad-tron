@@ -11,12 +11,13 @@ const Header = () => {
   to="/"
   style={{
     margin: "0 10px",
-    fontSize: "35px",
+    fontSize: "50px",
     color: "red",
     fontWeight: "bolder",
     textDecoration: "none"
   }}
 >
+  <img src="./logo.png" alt="logo" style={{ marginRight: "10px", width: "75px", marginBottom: "10px"}} />
   TriAd
 </Link>
       </div>
